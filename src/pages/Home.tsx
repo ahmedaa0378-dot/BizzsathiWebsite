@@ -546,7 +546,7 @@ function DownloadAppSection() {
 
               {/* iPhone */}
               <div>
-                <h3 className="text-lg font-bold text-white mb-4">🍎 iPhone</h3>
+                <h3 className="text-lg font-bold text-white mb-4"> IOS/iPhone</h3>
                 <ol className="space-y-2 text-sm text-zinc-400">
                   <li><span className="text-accent-bright font-bold mr-2">1.</span>Open app.bizzsathi.com in Safari</li>
                   <li><span className="text-accent-bright font-bold mr-2">2.</span>Tap Share icon → "Add to Home Screen"</li>
