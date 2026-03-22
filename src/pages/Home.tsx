@@ -522,6 +522,48 @@ function FAQSection() {
   );
 }
 
+// Section 8.5: Download App
+function DownloadAppSection() {
+  return (
+    <section id="download" className="py-24 bg-[#0a0a0a]">
+      <div className="max-w-3xl mx-auto px-4 text-center">
+        <AnimatedSection>
+          <h2 className="text-3xl font-bold text-white">Install BizzSathi on your phone</h2>
+          <p className="text-zinc-400 mt-3">No Play Store needed. Install directly from your browser in 10 seconds.</p>
+
+          <div className="mt-12 p-8 rounded-2xl bg-white/[0.03] border border-white/[0.06]">
+            <div className="grid md:grid-cols-2 gap-8 text-left">
+              {/* Android */}
+              <div>
+                <h3 className="text-lg font-bold text-white mb-4">🤖 Android</h3>
+                <ol className="space-y-2 text-sm text-zinc-400">
+                  <li><span className="text-accent-bright font-bold mr-2">1.</span>Open app.bizzsathi.com in Chrome</li>
+                  <li><span className="text-accent-bright font-bold mr-2">2.</span>Tap ⋮ menu → "Install app"</li>
+                  <li><span className="text-accent-bright font-bold mr-2">3.</span>Tap Install — done!</li>
+                </ol>
+                <a href="https://app.bizzsathi.com" target="_blank" rel="noopener noreferrer" className="btn-cta inline-block mt-6">Open BizzSathi →</a>
+              </div>
+
+              {/* iPhone */}
+              <div>
+                <h3 className="text-lg font-bold text-white mb-4">🍎 iPhone</h3>
+                <ol className="space-y-2 text-sm text-zinc-400">
+                  <li><span className="text-accent-bright font-bold mr-2">1.</span>Open app.bizzsathi.com in Safari</li>
+                  <li><span className="text-accent-bright font-bold mr-2">2.</span>Tap Share icon → "Add to Home Screen"</li>
+                  <li><span className="text-accent-bright font-bold mr-2">3.</span>Tap Add — done!</li>
+                </ol>
+                <a href="https://app.bizzsathi.com" target="_blank" rel="noopener noreferrer" className="btn-cta inline-block mt-6">Open BizzSathi →</a>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-xs text-zinc-600 mt-6">Works offline • Updates automatically • No storage wasted</p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 // Section 9: Final CTA
 function FinalCTASection() {
   return (
@@ -560,6 +602,7 @@ export default function Home() {
       <HowItWorksSection />
       <PricingSection />
       <TestimonialsSection />
+      <DownloadAppSection />
       <FAQSection />
       <FinalCTASection />
     </>
