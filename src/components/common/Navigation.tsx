@@ -11,6 +11,7 @@ export default function Navigation() {
     { label: 'Pricing', path: '/pricing' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
+    { label: '📲 Install App', path: '#download' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -25,20 +26,35 @@ export default function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="relative text-sm font-medium transition-colors"
-            >
-              <span className={`${isActive(item.path) ? 'text-white' : 'text-zinc-400 hover:text-white'}`}>
-                {item.label}
-              </span>
-              {isActive(item.path) && (
-                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#c8ee44]" />
-              )}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            if (item.label === '📲 Install App') {
+              return (
+                <a
+                  key={item.path}
+                  href={location.pathname === '/' ? '#download' : 'https://app.bizzsathi.com'}
+                  target={location.pathname === '/' ? '_self' : '_blank'}
+                  rel="noopener noreferrer"
+                  className="relative text-sm font-medium transition-colors text-zinc-400 hover:text-white"
+                >
+                  {item.label}
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="relative text-sm font-medium transition-colors"
+              >
+                <span className={`${isActive(item.path) ? 'text-white' : 'text-zinc-400 hover:text-white'}`}>
+                  {item.label}
+                </span>
+                {isActive(item.path) && (
+                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#c8ee44]" />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         <div className="hidden lg:block">
@@ -64,18 +80,34 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-xl z-50 flex flex-col items-center justify-center gap-8 pb-20">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={() => setIsOpen(false)}
-              className={`text-lg font-medium transition-colors ${
-                isActive(item.path) ? 'text-white' : 'text-zinc-400'
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            if (item.label === '📲 Install App') {
+              return (
+                <a
+                  key={item.path}
+                  href={location.pathname === '/' ? '#download' : 'https://app.bizzsathi.com'}
+                  target={location.pathname === '/' ? '_self' : '_blank'}
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-medium transition-colors text-zinc-400"
+                >
+                  {item.label}
+                </a>
+              );
+            }
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-lg font-medium transition-colors ${
+                  isActive(item.path) ? 'text-white' : 'text-zinc-400'
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <a
             href="https://app.bizzsathi.com"
             target="_blank"
