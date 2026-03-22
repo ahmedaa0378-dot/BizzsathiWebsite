@@ -535,7 +535,7 @@ function DownloadAppSection() {
             <div className="grid md:grid-cols-2 gap-8 text-left">
               {/* Android */}
               <div>
-                <h3 className="text-lg font-bold text-white mb-4">🤖 Android</h3>
+                <h3 className="text-lg font-bold text-white mb-4"> Android</h3>
                 <ol className="space-y-2 text-sm text-zinc-400">
                   <li><span className="text-accent-bright font-bold mr-2">1.</span>Open app.bizzsathi.com in Chrome</li>
                   <li><span className="text-accent-bright font-bold mr-2">2.</span>Tap ⋮ menu → "Install app"</li>
